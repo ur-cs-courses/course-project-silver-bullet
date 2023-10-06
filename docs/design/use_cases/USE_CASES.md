@@ -25,4 +25,6 @@ This next diagram captures the three types of **robots** -- small and large -- a
     - Probability of Failure Simulation
     - Creating and assigning the cards
     - User Story 3 detailed PlaintUML
+* Jenna:
+    - Contributed to discussion on user stories and updated documentation files for the use case diagrams.
 
