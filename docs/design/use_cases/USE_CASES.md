@@ -27,4 +27,8 @@ This next diagram captures the three types of **robots** -- small and large -- a
     - User Story 3 detailed PlaintUML
 * Jenna:
     - Contributed to discussion on user stories and updated documentation files for the use case diagrams.
-
+* Yili:
+    - Discussion on user stories and key features
+    - Scheduled meetings for brainstorm and organized meeting notes
+    - Designed the general UML Diagram
+    - Contributed to creating the user stories 
