@@ -32,3 +32,7 @@ This next diagram captures the three types of **robots** -- small and large -- a
     - Scheduled meetings for brainstorm and organized meeting notes
     - Designed the general UML Diagram
     - Contributed to creating the user stories 
+* Thando:
+    - Contributed to main discussion of user stories
+    - Designed the UML diagram for task assigning by the building manager
+    - Contributed to meeting notes based on requirements elaborated in class discussions.
