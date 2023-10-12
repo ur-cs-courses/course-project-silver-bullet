@@ -12,7 +12,7 @@ The **robots** of course are the entities that the program is managing, but have
 The following diagram captures the high level scope and function of the three actors.
 ![](general_diagram.png)
 
-This diagram captures a more detailed breakdown of the interactions **building manager** can have with the system. They are able to assign the three types of cleaning robots, scrubbing, mopping, and vacuuming, to complete their tasks. The manager will be notified if there is no robot available to complete their desired task.
+This diagram captures a more detailed breakdown of the interactions **building manager** can have with the system. They are able to assign the three types of cleaning robots, scrubbing, mopping, and vacuuming, to complete their tasks. 
 ![](task_assign.png)
 
 
