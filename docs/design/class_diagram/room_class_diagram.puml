@@ -1,0 +1,19 @@
+@startuml
+class Room {
+    +Size: int
+}
+
+class SmallRoom {
+    +Size: 0
+}
+class MedianRoom {
+    +Size: 1
+}
+class LargeRoom {
+    +Size: 2
+}
+
+Room <|-- SmallRoom
+Room <|-- MedianRoom
+Room <|-- LargeRoom
+@enduml
