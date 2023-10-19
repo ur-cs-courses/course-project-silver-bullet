@@ -1,0 +1,43 @@
+@startuml
+class Robot {
+    +Status: binary
+}
+
+class SmallRobot {
+    +Status
+    +sweep()
+    +vacuum()
+    +map()
+}
+
+class LargeRobot {
+    +Status
+    +sweep()
+    +vacuum()
+    +map()
+}
+
+interface Sweeper {
+    +sweep()
+}
+
+interface Vacuum {
+    +vacuum()
+}
+
+interface Mapper {
+    +map()
+}
+
+
+Robot <|-- SmallRobot
+Robot <|-- LargeRobot
+
+SmallRobot --> Sweeper
+SmallRobot --> Vacuum
+SmallRobot --> Mapper
+
+LargeRobot --> Sweeper
+LargeRobot --> Vacuum
+LargeRobot --> Mapper
+@enduml
