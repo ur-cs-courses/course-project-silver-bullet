@@ -1,20 +1,15 @@
 @startuml
 class Robot {
-    +Status: binary
+// Status includes {idle active fault}
+    +Status: int
 }
 
 class SmallRobot {
     +Status
-    +sweep()
-    +vacuum()
-    +map()
 }
 
 class LargeRobot {
     +Status
-    +sweep()
-    +vacuum()
-    +map()
 }
 
 interface Sweeper {
