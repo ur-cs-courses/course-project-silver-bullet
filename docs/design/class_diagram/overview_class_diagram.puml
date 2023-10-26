@@ -1,4 +1,5 @@
 @startuml
+left to right direction
 class Robot {
 // Status includes {idle active fault}
     +Status: int
@@ -24,6 +25,26 @@ interface Mapper {
     +map()
 }
 
+class Room {
+    +Size: int
+}
+
+class SmallRoom {
+    +Size: 0
+}
+class MedianRoom {
+    +Size: 1
+}
+class LargeRoom {
+    +Size: 2
+}
+
+class Interface {
+  + checkBrokenRobot()
+  + popBrokenRobot(robot_id)
+  + requestCleaning(room_id, cleaning_type)
+}
+
 
 Robot <|-- SmallRobot
 Robot <|-- LargeRobot
@@ -35,4 +56,8 @@ SmallRobot --> Mapper
 LargeRobot --> Sweeper
 LargeRobot --> Vacuum
 LargeRobot --> Mapper
+
+Room <|-- SmallRoom
+Room <|-- MedianRoom
+Room <|-- LargeRoom
 @enduml
