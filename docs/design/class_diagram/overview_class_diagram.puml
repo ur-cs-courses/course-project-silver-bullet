@@ -45,6 +45,13 @@ class Interface {
   + requestCleaning(room_id, cleaning_type)
 }
 
+class RobotManagementSystem {
+  - robotsMap: std::unordered_map<std::string, Place::place>
+  - robotsBrokenMap: std::unordered_map<std::string, Place::place>
+  + checkBrokenRobot(): std::string
+  + requestCleaning(room_id, cleaning_type): std::string
+}
+
 
 Robot <|-- SmallRobot
 Robot <|-- LargeRobot
@@ -60,4 +67,5 @@ LargeRobot --> Mapper
 Room <|-- SmallRoom
 Room <|-- MedianRoom
 Room <|-- LargeRoom
+RobotManagementSystem *--* Robot : contains
 @enduml
