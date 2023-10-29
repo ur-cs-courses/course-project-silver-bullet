@@ -1,0 +1,38 @@
+@startuml
+class Robot {
+// Status includes {idle active fault}
+    +Status: int
+}
+
+class SmallRobot {
+    +Status
+}
+
+class LargeRobot {
+    +Status
+}
+
+interface Sweeper {
+    +sweep()
+}
+
+interface Vacuum {
+    +vacuum()
+}
+
+interface Mapper {
+    +map()
+}
+
+
+Robot <|-- SmallRobot
+Robot <|-- LargeRobot
+
+SmallRobot --> Sweeper
+SmallRobot --> Vacuum
+SmallRobot --> Mapper
+
+LargeRobot --> Sweeper
+LargeRobot --> Vacuum
+LargeRobot --> Mapper
+@enduml
