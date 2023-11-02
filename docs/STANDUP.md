@@ -18,3 +18,9 @@ Yili:
     + RMS
     + UI
 + If possible having working units for classes mentioned above
+
+Thando:
++ Designed a detailed sequence diagram to show how the datalog is updated based on the occurance of important events like:
+    + success and failure of robots
+    + Requests from the BM
+    + When robot finishes its task
