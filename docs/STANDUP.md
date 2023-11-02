@@ -24,3 +24,8 @@ Thando:
     + success and failure of robots
     + Requests from the BM
     + When robot finishes its task
+
+Tony: 
++ come up with a mouse clicking simulation of robot cleanning
++ Add more Robot's attributes in Robot class digram
++ Write Code to similuate the probability of robot failure
