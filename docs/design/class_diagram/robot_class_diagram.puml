@@ -1,15 +1,27 @@
 @startuml
 class Robot {
 // Status includes {idle active fault}
-    +Status: int
+    +id: int
+    +type: int
+    +size: boolean
+    +time: int
+    +failure_rate: float
 }
 
 class SmallRobot {
-    +Status
+    +id
+    +type
+    +size
+    +time
+    +failure_rate
 }
 
 class LargeRobot {
-    +Status
+    +id
+    +type
+    +size
+    +time
+    +failure_rate
 }
 
 interface Sweeper {
