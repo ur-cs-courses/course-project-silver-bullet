@@ -2,8 +2,8 @@
 
 class Robot {
     - size: robot_size {small, large}
-    - Status: status {Idle, Active Fault}
-    + clean(location_name)
+    - process_time: int
+    - failure_rate: float
 }
 
 interface Sweeper {
@@ -26,14 +26,12 @@ class Location {
 class UserInterface {
   + checkBrokenRobot()
   + popBrokenRobot(robot_id)
-  + requestCleaning(room_id, cleaning_type)
+  + requestCleaning(location_name, cleaning_type)
 }
 
 class RobotManagementSystem {
-  - robotsMap: std::unordered_map<std::string, Place::place>
-  - robotsBrokenMap: std::unordered_map<std::string, Place::place>
-  + checkBrokenRobot(): std::string
-  + requestCleaning(room_id, cleaning_type): std::string
+  - robotsMap: std::unordered_map<int, Robot>
+  + requestCleaning(room_id, cleaning_type): void
 }
 
 
