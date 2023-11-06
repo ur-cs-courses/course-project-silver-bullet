@@ -7,11 +7,11 @@ This will serve as our master file for the connections between all the classes t
 ![](overview_class_diagram_v2.png)
 
 ## Robot Class
-There will be a parent class of **Robot** which will represent a general robot of which can have a status of either *idle*, *active*, or *fault* -- attributes which are important for managing the availability of robots or if they need to be fixed. There can be only two sizes of robots, *small* or *large*, each of which can be either a *sweeper*, *vacuum*, or *mopping* robot. Each of the robot types can only complete its matching task, i.e. a sweeper robot can only sweep but not vacuum or mop. Robots of small size can only clean small size rooms due to their battery capacity. Because of this distinction, the robot's actions are interfaces that will be implemented differently based on the robot's size.
+There will be a parent class of **Robot** which will represent a general robot. There can be only two sizes of robots, *small* or *large*, each of which can be either a *sweeper*, *vacuum*, or *mopping* robot. Each of the robot types can only complete its matching task, i.e. a sweeper robot can only sweep but not vacuum or mop. Robots of small size can only clean small size rooms due to their battery capacity. Because of this distinction, the robot's actions are interfaces that will be implemented differently based on the robot's size. Moreover, we use *process_time* to track a robot's availability: if it is 0, meaning it is available; otherwise, it is either broken or active. We use *fail_rate* to simulate fault scenarios.
 
 ![](robot_class_diagram.png)
 
-## Room Class
-There are three sizes of rooms in the building - *small*, *medium*, and *large*. The size of the room is important because large robots can clean any size room, but small robots can only clean small rooms. Each size room will have its own class and inherit from a general parent room class, where it is given a corresponding integer to its size.
+## Location Class
+There are three sizes of locations in the building - *small*, *medium*, and *large*. The size of the location is important because large robots can clean any size location, but small robots can only clean small locations.
 
 ![](room_class_diagram.png)
