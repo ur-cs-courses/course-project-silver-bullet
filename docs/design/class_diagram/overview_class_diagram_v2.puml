@@ -2,6 +2,7 @@
 
 class Robot {
     - size: robot_size {small, large}
+    - type: type {Sweeper, Vacuum, Mopper}
     - process_time: int
     - failure_rate: float
 }
