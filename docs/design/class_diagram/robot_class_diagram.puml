@@ -1,50 +1,25 @@
 @startuml
 class Robot {
-// Status includes {idle active fault}
-    +id: int
-    +type: int
-    +size: boolean
-    +time: int
-    +failure_rate: float
-}
-
-class SmallRobot {
-    +id
-    +type
-    +size
-    +time
-    +failure_rate
-}
-
-class LargeRobot {
-    +id
-    +type
-    +size
-    +time
-    +failure_rate
+    - size: robot_size {small, large}
+    - type: type {Sweeper, Vacuum, Mopper}
+    - process_time: int
+    - failure_rate: float
 }
 
 interface Sweeper {
-    +sweep()
+    + sweep(location_name)
 }
 
 interface Vacuum {
-    +vacuum()
+    + vacuum(location_name)
 }
 
-interface Mapper {
-    +map()
+interface Mopper {
+    + mop(location_name)
 }
 
 
-Robot <|-- SmallRobot
-Robot <|-- LargeRobot
-
-SmallRobot --> Sweeper
-SmallRobot --> Vacuum
-SmallRobot --> Mapper
-
-LargeRobot --> Sweeper
-LargeRobot --> Vacuum
-LargeRobot --> Mapper
+Robot --> Sweeper
+Robot --> Vacuum
+Robot --> Mopper
 @enduml
