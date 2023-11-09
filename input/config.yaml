@@ -1,0 +1,11 @@
+robots:
+  large_sweepers:
+  small_sweepers:
+  large_vacuums:
+  small_vacuums:
+  large_mops:
+  small_mops:
+rooms:
+  large: []
+  medium: []
+  small: []
