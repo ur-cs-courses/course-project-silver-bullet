@@ -18,6 +18,5 @@ rooms:
         - <room_name>
     small: 
         - <room_name>
-}
 ```
 Specify the number of robots of each type you have. Specify the names of the rooms in your buildings in their respective lists based on their size.
