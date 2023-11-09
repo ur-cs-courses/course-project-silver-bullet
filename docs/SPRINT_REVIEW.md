@@ -20,3 +20,27 @@ This document contains our sprint review summary from our biweekly meetings.
 **Plan to do:**
 + Specify each feature with methods and attributes in the class diagrams
 + Build Demo pseudo code based on designs
+
+## November 9, 2023
+
+**What went well:**
++ Getting a better feeling of the git flow - card->issue->branch->merge 
++ Adding each other as reviewers on PRs
++ More professional
++ Good progress so far
+
+**To improve on:**
++ Communication and updating team members
++ More balanced break down of tasks 
+    + finer breakdown of specifics for each task
+    + assigning story points
+
+**Plan to do:**
++ Debug yaml-cpp issues
++ Changes to input file - new attributes
++ Begin configuring CMake files
++ Room class implementation
++ Adjustments to Robot class
++ Begin creating 'user interface' (CLI) - how the user will interact with our software
++ Work on bonus point ideas 
+    + visualization simulation
