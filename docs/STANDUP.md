@@ -37,3 +37,9 @@ Jenna:
     + Still getting the 'file not found' error, even when linking running CMake
 + Brainstorming alternate input ideas but planning to go to office hours for help
 
+Thando:
++ Created the first version of the room class
+    + This was seperated into header, cpp and main files but I might have to remove the header file.
+    + This version allows the user to input the rooms and sizes manually instead of using the yaml files
+    + This version does not take room dimenstions. It takes small, medium, and large as room size.
+
