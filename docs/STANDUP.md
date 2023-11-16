@@ -29,3 +29,35 @@ Tony:
 + come up with a mouse clicking simulation of robot cleanning
 + Add more Robot's attributes in Robot class digram
 + Write Code to similuate the probability of robot failure
+
+## Standup 3: November 16, 2023
+
+Jenna:
++ Continued to work on linking the yaml-cpp library
+    + Still getting the 'file not found' error, even when linking running CMake
++ Brainstorming alternate input ideas but planning to go to office hours for help
+
+Thando:
++ Created the first version of the room class
+    + This was seperated into header, cpp and main files but I might have to remove the header file.
+    + This version allows the user to input the rooms and sizes manually instead of using the yaml files
+    + This version does not take room dimenstions. It takes small, medium, and large as room size.
+
+Tony:
++ Working on the function that updates the location of the Robot and the moving flow of Robot
++ Working on the data log file
++ Working on the simulation of the robot cleaning process
+
+Yili:
++ Improvements on Previous Code Base:
+    + Restructure Robot Class and RMS Class
+        + Merge RMS.h and RMS.cpp
+        + Create sub classes of Robot Class: Mop, Vacuum, Sweeper
+    + Implement Unique_ptr for RMS Class
++ What's New:
+    + Begin Design for UI Work Code and Part of the Simulation
+        + UI: Successfully take in inputs
+        + Simulation: Hard Code Inputs to test Outputs
++ What's Next:
+    + Fetch and merge Location Class
+    + Fetch and merge function that updates the location of the Robot
