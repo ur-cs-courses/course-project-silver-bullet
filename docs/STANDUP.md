@@ -58,6 +58,6 @@ Yili:
     + Begin Design for UI Work Code and Part of the Simulation
         + UI: Successfully take in inputs
         + Simulation: Hard Code Inputs to test Outputs
-What's Next:
++ What's Next:
     + Fetch and merge Location Class
     + Fetch and merge function that updates the location of the Robot
