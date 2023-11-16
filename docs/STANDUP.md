@@ -29,3 +29,11 @@ Tony:
 + come up with a mouse clicking simulation of robot cleanning
 + Add more Robot's attributes in Robot class digram
 + Write Code to similuate the probability of robot failure
+
+## Standup 3: November 16, 2023
+
+Jenna:
++ Continued to work on linking the yaml-cpp library
+    + Still getting the 'file not found' error, even when linking running CMake
++ Brainstorming alternate input ideas but planning to go to office hours for help
+
