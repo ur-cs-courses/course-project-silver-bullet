@@ -43,3 +43,8 @@ Thando:
     + This version allows the user to input the rooms and sizes manually instead of using the yaml files
     + This version does not take room dimenstions. It takes small, medium, and large as room size.
 
+Tony:
++ Working on the function that updates the location of the Robot and the moving flow of Robot
++ Working on the data log file
++ Working on the simulation of the robot cleaning process
+
