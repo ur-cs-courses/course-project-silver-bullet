@@ -48,3 +48,16 @@ Tony:
 + Working on the data log file
 + Working on the simulation of the robot cleaning process
 
+Yili:
++ Improvements on Previous Code Base:
+    + Restructure Robot Class and RMS Class
+        + Merge RMS.h and RMS.cpp
+        + Create sub classes of Robot Class: Mop, Vacuum, Sweeper
+    + Implement Unique_ptr for RMS Class
++ What's New:
+    + Begin Design for UI Work Code and Part of the Simulation
+        + UI: Successfully take in inputs
+        + Simulation: Hard Code Inputs to test Outputs
+What's Next:
+    + Fetch and merge Location Class
+    + Fetch and merge function that updates the location of the Robot
