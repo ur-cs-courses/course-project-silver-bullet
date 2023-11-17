@@ -1,10 +1,11 @@
-add_executable(say_hello
-  say_hello.cpp
+add_executable(run_simulation
+  User_Interface.cpp
 )
 
-target_link_libraries(say_hello
+target_link_libraries(run_simulation
   PRIVATE
-    libhello
+  yaml-cpp
+  #include our other libraries created in the home directory cmake file
 )
 
-target_compile_features(say_hello PRIVATE cxx_std_20)
+target_compile_features(run_simulation PRIVATE cxx_std_20)
