@@ -40,7 +40,7 @@ int main() {
             }
 
             else if (command == "help"){
-                std::cout << "Enter 'mop', 'vacuum', or 'sweeper', or 'quit' to exit.\n";
+                std::cout << "Enter 'clean' for cleaning choices, or 'quit' to exit.\n";
             }
 
             else if (command == "clean"){

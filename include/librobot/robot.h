@@ -44,7 +44,7 @@ public:
     void setType(std::string input_type);
     void setLoc(std::string input_loc);
 
-    // Test Meth
+    // Test Method
     void print();
 };
 
