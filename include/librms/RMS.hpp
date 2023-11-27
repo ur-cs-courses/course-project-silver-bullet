@@ -1,6 +1,7 @@
 // #include "RMS.h"
 // #include "location.cpp"
-#include "robot.cpp"
+//#include "../librobot/robot.h"
+#include "../../src/robot.cpp"
 #include <unordered_map>
 #include <tuple>
 #include <iostream>
