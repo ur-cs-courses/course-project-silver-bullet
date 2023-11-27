@@ -5,6 +5,7 @@ add_executable(run_simulation
 target_link_libraries(run_simulation
   PRIVATE
   yaml-cpp
+  fmt::fmt
   #include our other libraries created in the home directory cmake file
 )
 
