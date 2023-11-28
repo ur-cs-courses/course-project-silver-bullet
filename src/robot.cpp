@@ -6,6 +6,8 @@
 Robot::Robot(Size robotSize, Type robotType, int processingTime, std::string loc_value)
     : size(robotSize), type(robotType), processingTime(processingTime), loc(loc_value) {}
 
+Robot::Robot(){}
+
 // Getter methods
 Size Robot::getSize(){
     return size;
@@ -20,8 +22,60 @@ int Robot::getTime(){
 }
 
 // Setter methods
-void Robot::setTime(int processingTime) {
-    processingTime = processingTime;
+void Robot::setSize(std::string input_size) {
+    if(input_size == "small"){
+        size = Size::Small;
+    }
+    else if (input_size == "large"){
+        size = Size::Large;
+    }
+}
+
+void Robot::setType(std::string input_type) {
+    if(input_type == "mop"){
+        type = Type::Mop;
+    }
+    else if (input_type == "sweeper"){
+        type = Type::Sweeper;
+    }
+    else if (input_type == "vacuum"){
+        type = Type::Vacuum;
+    }
+}
+
+void Robot::setTime(int time) {
+    processingTime = time;
+}
+
+void Robot::setLoc(std::string input_loc){
+    loc = input_loc;
+}
+
+// Three Implementations
+Mop::Mop(Size robotSize, Type robotType, int processingTime, std::string loc_value)
+: Robot(robotSize, robotType, processingTime, loc_value) {}
+
+Vacuum::Vacuum(Size robotSize, Type robotType, int processingTime, std::string loc_value)
+: Robot(robotSize, robotType, processingTime, loc_value) {}
+
+Sweeper::Sweeper(Size robotSize, Type robotType, int processingTime, std::string loc_value)
+: Robot(robotSize, robotType, processingTime, loc_value) {}
+
+// Clean Functions ** WAITING TO BE CHANGED
+int Robot::clean(){
+    return 0;
+}
+
+int Mop::clean(){
+    return 0;
+}
+
+int Vacuum::clean(){
+    return 0;
+}
+
+int Sweeper::clean(){
+    return 0;
 }
 
 // Test
