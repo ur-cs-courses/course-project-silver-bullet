@@ -1,4 +1,4 @@
-#include "../include/librobot/robot.h"
+#include "librobot/robot.h"
 #include <iostream>
 #include <string>
 
