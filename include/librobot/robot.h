@@ -22,6 +22,7 @@ private:
     Size size;
     Type type;
     int processingTime;
+    // float prob;
     std::string loc;
 
 public:
@@ -37,6 +38,8 @@ public:
     Size getSize();
     Type getType();
     int getTime();
+    std::string getLoc();
+    int fixTime();
 
     // Setter methods
     void setTime(int processingTime);
@@ -44,7 +47,7 @@ public:
     void setType(std::string input_type);
     void setLoc(std::string input_loc);
 
-    // Test Method
+    // Test Meth
     void print();
 };
 

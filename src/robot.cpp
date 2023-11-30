@@ -1,4 +1,4 @@
-#include "librobot/robot.h"
+#include "robot.h"
 #include <iostream>
 #include <string>
 
@@ -19,6 +19,20 @@ Type Robot::getType(){
 
 int Robot::getTime(){
     return processingTime;
+}
+
+std::string Robot::getLoc(){
+    return loc;
+}
+
+int Robot::fixTime(){
+    if (size == Size::Small){
+        return 10;
+    }
+    else if (size == Size::Large){
+        return 20;
+    }
+    return 0;
 }
 
 // Setter methods
