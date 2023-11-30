@@ -199,13 +199,11 @@ int main() {
                 }
             }
 
-            else {
-                std::cout << "Unknown command. Please enter 'clean', or 'quit' to exit.\n";
-            }
-            
+    //         else {
+    //             std::cout << "Unknown command. Please enter 'clean', or 'quit' to exit.\n";
+    //         }
         }
         
     }
-
     return 0;
 }
