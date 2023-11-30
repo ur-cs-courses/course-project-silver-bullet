@@ -1,6 +1,7 @@
 // #include "RMS.h"
-#include "room.hpp"
-#include "robot.cpp"
+//#include "room.hpp"
+#include "../libroom/room.hpp"
+#include "../../src/robot.cpp"
 #include <unordered_map>
 #include <tuple>
 #include <vector>
@@ -59,7 +60,7 @@ class RobotManagementSystem {
         }
 
         bool checkRoom(std::string s){
-            for (auto& info : roomDictionary){
+            for (auto info : roomDictionary){
                 if (info.first == s){
                     return true;
                 }
