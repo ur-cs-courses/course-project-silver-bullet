@@ -44,3 +44,18 @@ This document contains our sprint review summary from our biweekly meetings.
 + Begin creating 'user interface' (CLI) - how the user will interact with our software
 + Work on bonus point ideas 
     + visualization simulation
+
+
+## November 30, 2023
+
+**What went well:**
++ yamlcpp works! Thank you CPM 
++ 
+
+**To improve on:**
++ Creating cards before beginning work and linking issues and branches immediately
++ Committing code in increments 
++ Updating status of cards on project board so team members are updated on each other's progress
+
+**Plan to do:**
++ 
