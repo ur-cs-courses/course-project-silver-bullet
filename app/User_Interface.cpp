@@ -3,12 +3,12 @@
 #include <random>
 #include <thread>
 #include <chrono>
-#include "RMS.hpp"
+//#include "RMS.hpp"
 #include <memory>
-// #include "../include/librms/RMS.hpp"
-// #include "../include/libroom/room.hpp"
-// #include <fmt/core.h>
-// #include <yaml-cpp/yaml.h>
+#include "../include/librms/RMS.hpp"
+//#include "../include/libroom/room.hpp"
+#include <fmt/core.h>
+#include <yaml-cpp/yaml.h>
 
 int main() {
     RobotManagementSystem rms;
@@ -16,7 +16,7 @@ int main() {
     auto createRobot = [](Size robotSize, Type robotType, int processingTime, std::string loc_value) {
         return std::make_unique<Robot>(robotSize, robotType, processingTime, loc_value);
     };
-    /*
+
     YAML::Node config = YAML::LoadFile("../../input/config.yaml");
 
     int robotID = 0; // key value for adding robots to the map in RMS
@@ -88,17 +88,17 @@ int main() {
         std::string name = config["rooms"]["small"][i].as<std::string>();
         rms.addRoom(name, RoomSize::Small);
     }
-    */
+
 
     //-------------------------------------------------------------------------------------------
     // Example of adding robots (hard code)
-    rms.addRobot(1, createRobot(Size::Small, Type::Mop, 0, "hub"));
-    rms.addRobot(2, createRobot(Size::Large, Type::Mop, 0, "hub"));
-    rms.addRobot(3, createRobot(Size::Small, Type::Vacuum, 0, "hub"));
+    // rms.addRobot(1, createRobot(Size::Small, Type::Mop, 0, "hub"));
+    // rms.addRobot(2, createRobot(Size::Large, Type::Mop, 0, "hub"));
+    // rms.addRobot(3, createRobot(Size::Small, Type::Vacuum, 0, "hub"));
 
-    rms.addRoom("R1", RoomSize::Large);
-    rms.addRoom("R2", RoomSize::Small);
-    rms.addRoom("R3", RoomSize::Medium);
+    // rms.addRoom("R1", RoomSize::Large);
+    // rms.addRoom("R2", RoomSize::Small);
+    // rms.addRoom("R3", RoomSize::Medium);
 
     // rms.debug();
 
@@ -135,7 +135,7 @@ int main() {
                 std::string room_name;
                 RoomSize rs;
 
-                while (!(room_flag || clean_flag))
+                while (!(room_flag) || !(clean_flag))
                 {   
                     room_flag = 0;
                     clean_flag = 0;
@@ -144,7 +144,7 @@ int main() {
                     if (choice == "cancel"){
                         break;
                     }
-                    std::cout << "Enter the location that you would like to clean or 'help' for their names.\n";
+                    std::cout << "Enter the location that you would like to clean.\n";
                     std::cin >> room_name;
                     if (choice == "mop" || choice == "vacuum" || choice == "sweeper") {
                         clean_flag = 1;
@@ -154,7 +154,7 @@ int main() {
                         room_flag = 1;
                         rs = rms.getRoomSize(room_name);
                     }
-                    if (!(room_flag || clean_flag)){
+                    if (!(room_flag) || !(clean_flag)){
                         std::cout << "Please enter correct cleaning type or room name.\n";
                     }
                 }
