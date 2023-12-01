@@ -137,6 +137,10 @@ class RobotManagementSystem {
             mtxflag = flag;
         }
 
+        int getTime(){
+            return std::chrono::duration_cast<std::chrono::seconds>(std::chrono::high_resolution_clock::now() - timer).count() + 1;
+        }
+
         // Multi-threading Test Function
         void helloworld(){
             std::unique_lock<std::mutex> lock(mtx);
