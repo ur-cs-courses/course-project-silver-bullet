@@ -16,13 +16,13 @@ TEST_CASE("Room Tests"){
     Room largeRoom("Library", RoomSize::Large);
 
     REQUIRE( smallRoom.getName() == "Bathroom" );
-    REQUIRE( smallRoom.getSize() == Small );
+    REQUIRE( smallRoom.getSize() == RoomSize::Small );
 
     REQUIRE( mediumRoom.getName() == "Bedroom" );
-    REQUIRE( mediumRoom.getSize() == Medium );
+    REQUIRE( mediumRoom.getSize() == RoomSize::Medium );
 
     REQUIRE( largeRoom.getName() == "Library" );
-    REQUIRE( largeRoom.getSize() == Large );
+    REQUIRE( largeRoom.getSize() == RoomSize::Large );
 
     // roomDictionary[smallRoom.getName()] = smallRoom.getSize();
     // roomDictionary[mediumRoom.getName()] = mediumRoom.getSize();
