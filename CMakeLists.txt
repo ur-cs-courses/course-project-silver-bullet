@@ -3,6 +3,12 @@ project(libsim)
 
 include(dependencies.cmake)
 
+project(
+    CatchExample 
+    VERSION 0.1.0
+    DESCRIPTION "Example source code for doing C++ unit tests with Catch."
+    LANGUAGES CXX)
+
 # add_library(librms
 #   src/RMS.cpp
 # )
@@ -16,4 +22,6 @@ include(dependencies.cmake)
 #   fmt::fmt
 # )
 
-add_subdirectory(app)
+# add_subdirectory(app)
+
+add_subdirectory(tests)

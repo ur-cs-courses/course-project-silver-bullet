@@ -15,7 +15,6 @@ target_compile_features(room_test PRIVATE cxx_std_20)
 target_link_libraries(room_test
   PRIVATE
     Catch2::Catch2WithMain
-    libroom
 )
 # target_link_libraries(robot_test
 #   PRIVATE
