@@ -158,7 +158,7 @@ class RobotManagementSystem {
         }
 
         void simulation(){
-            std::ofstream outFile("robot_log.txt");
+            std::ofstream outFile("../../output/robot_log.txt");
             while (true)
             {   
                 if (mtxflag) {
