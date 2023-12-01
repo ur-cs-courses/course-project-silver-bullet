@@ -21,6 +21,7 @@ class RobotManagementSystem {
         // std::vector<Room> room_info;
         std::unordered_map<std::string, RoomSize> roomDictionary;
         bool mtxflag = false;
+        std::chrono::high_resolution_clock::time_point timer = std::chrono::high_resolution_clock::now();
         // std::unordered_map<int, std::tuple> robots_position;
 
     public:
