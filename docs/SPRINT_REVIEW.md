@@ -44,3 +44,28 @@ This document contains our sprint review summary from our biweekly meetings.
 + Begin creating 'user interface' (CLI) - how the user will interact with our software
 + Work on bonus point ideas 
     + visualization simulation
+
+
+## November 30, 2023
+
+**What went well:**
++ yamlcpp works! Thank you CPM 
++ Working user interface with multithreading
++ room and robot classes merged into UI well
++ Finalized RMS algorithms
++ Finally testing with CMake
++ Communication was better in group chat
+
+**To improve on:**
++ Creating cards before beginning work and linking issues and branches immediately
++ Committing code in increments 
++ Updating status of cards on project board so team members are updated on each other's progress
++ Communication on updates on what each person is working on and how the components should work together^
++ more even distribution of labor
+
+**Plan to do:**
++ Integrate data log with UI
++ Catch2 Testing
++ Finish the simulation
++ Implement bonus point components (or just designs)
+    + simulation visualization

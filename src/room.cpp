@@ -1,42 +1,16 @@
 // room.cpp
+// #include <fmt/core.h>
 
-#include "room.h"
+// #include "libhello/room.hpp"
 
-Room::Room(const std::string& roomName, int roomSize) : name(roomName), size(roomSize) {}
 
-std::string Room::getName() const {
-    return name;
-}
+// Room::Room(const std::string& name, RoomSize size)
+//     : name_(name), size_(size) {}
 
-void Room::setName(const std::string& newName) {
-    name = newName;
-}
+// std::string Room::getName() const {
+//     return name_;
+// }
 
-int Room::getSize() const {
-    return size;
-}
-
-void Room::setSize(int newSize) {
-    size = newSize;
-}
-
-void Room::displayInfo() const {
-    std::string sizeStr;
-
-    switch (size) {
-        case 1:
-            sizeStr = "Small";
-            break;
-        case 2:
-            sizeStr = "Medium";
-            break;
-        case 3:
-            sizeStr = "Large";
-            break;
-        default:
-            sizeStr = "Unknown";
-            break;
-    }
-
-    std::cout << "Room Name: " << name << ", Size: " << sizeStr << std::endl;
-}
+// RoomSize Room::getSize() const {
+//     return size_;
+// }
