@@ -8,9 +8,8 @@
 #include <iostream>
 
 TEST_CASE("Room Tests"){
-    std::unordered_map<std::string, RoomSize> roomDictionary;
 
-    // Create rooms and add them to the dictionary
+    // Create rooms
     Room smallRoom("Bathroom", RoomSize::Small);
     Room mediumRoom("Bedroom", RoomSize::Medium);
     Room largeRoom("Library", RoomSize::Large);

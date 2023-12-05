@@ -7,17 +7,17 @@ ELSE (${Catch2_FOUND})
 ENDIF (${Catch2_FOUND})
 
 add_executable(room_test room_test.cpp)
-# add_executable(robot_test robot_test.cpp)
+add_executable(robot_test robot_test.cpp)
 
 target_compile_features(room_test PRIVATE cxx_std_20)
-# target_compile_features(robot_test PRIVATE cxx_std_20)
+target_compile_features(robot_test PRIVATE cxx_std_20)
 
 target_link_libraries(room_test
   PRIVATE
     Catch2::Catch2WithMain
 )
-# target_link_libraries(robot_test
-#   PRIVATE
-#     Catch2::Catch2WithMain
-#     librobot
-# )
+target_link_libraries(robot_test
+  PRIVATE
+    Catch2::Catch2WithMain
+    robot
+)
