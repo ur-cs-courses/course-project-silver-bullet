@@ -61,3 +61,13 @@ Yili:
 + What's Next:
     + Fetch and merge Location Class
     + Fetch and merge function that updates the location of the Robot
+
+
+## Standup 4: December 7, 2023
+
+Jenna:
++ Addressed Dr. Martin's comments from the last sprint
++ Cleaned up some old files from the repo
++ Started on Catch2 testing for the RMS class
+    + addRoom and addRobot are completed - add getters to RMS.hpp help with testing
+    + still need to test for some of the more complex functions
