@@ -193,8 +193,29 @@ int main() {
                 }
 
                 else{
-                    // worktime here will be changed
-                    int worktime = 10;
+                    int worktime;
+                    std::pair<int, int> intPos;
+                    if (rs == RoomSize::Small)
+                    {
+                        worktime = 16;
+                        intPos = rms.startPosition(rs, rms.getRoomIndex(room_name));
+                        rms.setInitTime(robot_ind, intPos.first, intPos.second);
+                    }
+
+                    else if (rs == RoomSize::Medium)
+                    {
+                        worktime = 49;
+                        intPos = rms.startPosition(rs, rms.getRoomIndex(room_name));
+                        rms.setInitTime(robot_ind, intPos.first, intPos.second);
+                    }
+
+                    else if (rs == RoomSize::Large)
+                    {
+                        worktime = 100;
+                        intPos = rms.startPosition(rs, rms.getRoomIndex(room_name));
+                        rms.setInitTime(robot_ind, intPos.first, intPos.second);
+                    }
+                    
                     rms.add_busyRobot(robot_ind, worktime);
                 }
             }
