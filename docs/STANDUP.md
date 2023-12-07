@@ -73,7 +73,10 @@ Jenna:
     + still need to test for some of the more complex functions
 
 Thando:
-+ Built Catch2 testing files for room and robot classes.
++ Built Catch2 testing files for room class.
     + might need to test for more complex functions
++ Built Catch2 testing files for robot class.
+    + might need to test for more complex functions
++ Created the CMake Lists file for catch2 testing.
 + Deleted some unnecessary files in the .cache file.
 + I plan to start working on diagrams for the bonuses.
