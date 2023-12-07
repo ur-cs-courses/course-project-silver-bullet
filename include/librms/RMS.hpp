@@ -75,6 +75,19 @@ class RobotManagementSystem {
             return roomDictionary[s];
         }
 
+        int getRoomIndex(std::string s){
+            int count = 0;
+            for (auto info : roomDictionary){
+                if ((info.first == s) & (info.second == getRoomSize(s))){
+                    return count;
+                }
+                else if (info.second == getRoomSize(s)){
+                    count ++;
+                }
+            }
+            return count;
+        }
+
         // test func show robot status
         void showtime(int index){
             std::cout << "robot " << index << " time left " << robots[index] -> getTime() << " loc " << robots[index] -> getLoc() << std::endl;
