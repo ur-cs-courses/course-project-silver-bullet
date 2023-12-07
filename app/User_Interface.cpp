@@ -13,8 +13,8 @@
 int main() {
     RobotManagementSystem rms;
     std::cout << "Initializing..." << std::endl;
-    auto createRobot = [](Size robotSize, Type robotType, int processingTime, std::string loc_value) {
-        return std::make_unique<Robot>(robotSize, robotType, processingTime, loc_value);
+    auto createRobot = [](Size robotSize, Type robotType, int processingTime, std::string loc_value, int xx, int yy) {
+        return std::make_unique<Robot>(robotSize, robotType, processingTime, loc_value, xx, yy);
     };
 
     YAML::Node config = YAML::LoadFile("../../input/config.yaml");
