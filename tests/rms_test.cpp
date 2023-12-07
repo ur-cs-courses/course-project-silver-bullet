@@ -21,9 +21,40 @@ TEST_CASE("Robot Management System Tests"){
         REQUIRE(rms.getNumRobots() == 4);
     }
 
+    //Test send to location
+
+    //Test decrementing Robot cleaning time
+
     //Test addRoom
     SECTION("Adding rooms"){
+        for (int i = 0; i < 2; i++){
+            rms.addRoom("room" + std::to_string(i), RoomSize::Large);
+        }
+        for (int i = 2; i < 5; i++){
+            rms.addRoom("room" + std::to_string(i), RoomSize::Medium);
+        }
+        for (int i = 5; i < 9; i++){
+            rms.addRoom("room" + std::to_string(i), RoomSize::Small);
+        }
 
+        REQUIRE(rms.getNumRooms() == 9);
+    }
+
+    //Test getting Room size based on name
+    SECTION("Get room size"){
+        for (int i = 0; i < 2; i++){
+            rms.addRoom("room" + std::to_string(i), RoomSize::Large);
+        }
+        for (int i = 2; i < 5; i++){
+            rms.addRoom("room" + std::to_string(i), RoomSize::Medium);
+        }
+        for (int i = 5; i < 9; i++){
+            rms.addRoom("room" + std::to_string(i), RoomSize::Small);
+        }
+
+        REQUIRE(rms.getRoomSize("room1") == RoomSize::Large);
+        REQUIRE(rms.getRoomSize("room4") == RoomSize::Medium);
+        REQUIRE(rms.getRoomSize("room7") == RoomSize::Small);
     }
 
 }
