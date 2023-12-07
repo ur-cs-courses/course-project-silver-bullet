@@ -27,42 +27,42 @@ int main() {
     int vacuums = 0;
     
     for (int i = 0; i < config["robots"]["large_sweepers"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Large, Type::Sweeper, 0, "hub"));
+        rms.addRobot(robotID, createRobot(Size::Large, Type::Sweeper, 0, "hub", 0, 0));
         robotID++;
         large++;
         sweepers++;
     }
 
     for (int i = 0; i < config["robots"]["small_sweepers"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Small, Type::Sweeper, 0, "hub"));
+        rms.addRobot(robotID, createRobot(Size::Small, Type::Sweeper, 0, "hub", 0, 0));
         robotID++;
         small++;
         sweepers++;
     }
 
     for (int i = 0; i < config["robots"]["large_vacuums"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Large, Type::Vacuum, 0, "hub"));
+        rms.addRobot(robotID, createRobot(Size::Large, Type::Vacuum, 0, "hub", 0, 0));
         robotID++;
         large++;
         vacuums++;
     }
 
     for (int i = 0; i < config["robots"]["small_vacuums"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Small, Type::Vacuum, 0, "hub"));
+        rms.addRobot(robotID, createRobot(Size::Small, Type::Vacuum, 0, "hub", 0, 0));
         robotID++;
         small++;
         vacuums++;
     }
 
     for (int i = 0; i < config["robots"]["large_mops"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Large, Type::Mop, 0, "hub"));
+        rms.addRobot(robotID, createRobot(Size::Large, Type::Mop, 0, "hub", 0, 0));
         robotID++;
         large++;
         mops++;
     }
 
     for (int i = 0; i < config["robots"]["small_mops"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Small, Type::Mop, 0, "hub"));
+        rms.addRobot(robotID, createRobot(Size::Small, Type::Mop, 0, "hub", 0, 0));
         robotID++;
         small++;
         mops++;
