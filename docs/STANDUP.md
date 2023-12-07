@@ -71,3 +71,9 @@ Jenna:
 + Started on Catch2 testing for the RMS class
     + addRoom and addRobot are completed - add getters to RMS.hpp help with testing
     + still need to test for some of the more complex functions
+
+Thando:
++ Built Catch2 testing files for room and robot classes.
+    + might need to test for more complex functions
++ Deleted some unnecessary files in the .cache file.
++ I plan to start working on diagrams for the bonuses.
