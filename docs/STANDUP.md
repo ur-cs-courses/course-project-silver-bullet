@@ -86,6 +86,12 @@ Yili:
     + Reduce redundancy for Robot Class
         + Delete some unnecessary methods, such as clean()
     + Implement Unique_ptr for RMS Class
+
+Tony:
++ Help integrating log file and all help functions into the main
++ Integrating the Visual Simulation into the whole project
++ improve the data log output
+
 + What's New:
     + Merge Room Class by Thando into RMS Class
     + Merge YAML input sections by Jenna into the simulation 
