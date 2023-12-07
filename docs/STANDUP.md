@@ -80,3 +80,17 @@ Thando:
 + Created the CMake Lists file for catch2 testing.
 + Deleted some unnecessary files in the .cache file.
 + I plan to start working on diagrams for the bonuses.
+
+Yili:
++ Improvements on Previous Code Base:
+    + Reduce redundancy for Robot Class
+        + Delete some unnecessary methods, such as clean()
+    + Implement Unique_ptr for RMS Class
++ What's New:
+    + Merge Room Class by Thando into RMS Class
+    + Merge YAML input sections by Jenna into the simulation 
+    + Merge datalog output feature by Tony work for the simulation
+    + Merge Probability methods by Tony into RMS Class work for the simulation
++ What's Next:
+    + Create methods to output CSV files for Tony's animation
+    + Have coordinates algorithm work for the simulation
