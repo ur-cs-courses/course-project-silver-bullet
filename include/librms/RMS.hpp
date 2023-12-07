@@ -34,6 +34,11 @@ class RobotManagementSystem {
             return dis(gen) <= p;
         }
 
+        void setInitTime(int index, int xx, int yy){
+            robots[index] -> setX(xx);
+            robots[index] -> setY(yy);
+        }
+
         void addRobot(int index, std::unique_ptr<Robot> r) {
             robots[index] = move(r);
         }
@@ -73,6 +78,30 @@ class RobotManagementSystem {
 
         RoomSize getRoomSize(std::string s){
             return roomDictionary[s];
+        }
+
+        int get_step(RoomSize r){
+            char roomSize;
+            if (r == RoomSize::Large){
+                roomSize = 'L';
+            }
+            else if (r == RoomSize::Medium){
+                roomSize = 'M';
+            }
+            else if (r == RoomSize::Medium)
+            {
+                roomSize = 'S';
+            }
+
+            int step;
+            if (roomSize == 'L') {
+                step = 9;
+            } else if (roomSize == 'M') {
+                step = 6;
+            } else {
+                step = 3;
+            }
+            return step;
         }
 
         int getRoomIndex(std::string s){
