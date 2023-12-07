@@ -6,6 +6,8 @@
 #include <tuple>
 #include <vector>
 #include <iostream>
+#include <fstream>
+#include <chrono>
 #include <unordered_map>
 #include <string>
 #include <mutex>
@@ -19,6 +21,7 @@ class RobotManagementSystem {
         // std::vector<Room> room_info;
         std::unordered_map<std::string, RoomSize> roomDictionary;
         bool mtxflag = false;
+        std::chrono::high_resolution_clock::time_point timer = std::chrono::high_resolution_clock::now();
         // std::unordered_map<int, std::tuple> robots_position;
 
     public:
@@ -135,6 +138,10 @@ class RobotManagementSystem {
             mtxflag = flag;
         }
 
+        int getTime(){
+            return std::chrono::duration_cast<std::chrono::seconds>(std::chrono::high_resolution_clock::now() - timer).count() + 1;
+        }
+
         // Multi-threading Test Function
         void helloworld(){
             std::unique_lock<std::mutex> lock(mtx);
@@ -151,6 +158,7 @@ class RobotManagementSystem {
         }
 
         void simulation(){
+            std::ofstream outFile("../../output/robot_log.txt");
             while (true)
             {   
                 if (mtxflag) {
@@ -167,6 +175,7 @@ class RobotManagementSystem {
                             int fixtime = robots[rob.first] -> fixTime();
                             robots[rob.first] -> setTime(fixtime + 1);
                             robots[rob.first] -> setLoc("Maintenance Station");
+                            outFile << "Robot" << rob.first << " is broken at " << "Maintenance Station" << std::endl;
                         }
                         else{
                             dectime(rob.first);
@@ -174,6 +183,10 @@ class RobotManagementSystem {
                             if (checkFinish(rob.first)){
                                 busyRobot[rob.first] = false;
                                 robots[rob.first] -> setLoc("hub");
+                                outFile << "Robot" << rob.first << " is sent back to hub at time " << getTime() << std::endl;
+                            }
+                            else{
+                                outFile << "Robot" << rob.first << " is cleaning room " << robots[rob.first] -> getLoc() << " @ location at time " << getTime() << std::endl;
                             }
                         }                
                     }
@@ -186,12 +199,14 @@ class RobotManagementSystem {
                         if (checkFinish(rob.first)){
                             brokenRobot[rob.first] = false;
                             robots[rob.first] -> setLoc("hub");
+                            outFile << "Robot" << rob.first << " is fixed and sent back to hub at time " << getTime() << std::endl;
                         }
                     }
                 }
                 mtx.unlock();
-                std::this_thread::sleep_for(std::chrono::seconds(3));
+                std::this_thread::sleep_for(std::chrono::seconds(1));
             }
+            outFile.close();
         }
 
         void debug(){
