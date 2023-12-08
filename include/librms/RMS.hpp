@@ -269,7 +269,7 @@ class RobotManagementSystem {
 
         void simulation(){
             std::ofstream outFile("../../output/robot_log.txt");
-            // std::ofstream csvFile("../../output/simulationInput.csv");
+            std::ofstream csvFile("../../output/simulationInput.csv");
             while (true)
             {   
                 if (mtxflag) {
@@ -337,9 +337,9 @@ class RobotManagementSystem {
                     }
                 }
 
-                // for (auto &rob: robots){
-                //     csvFile << rob.second -> getX() << "," << rob.second -> getY() << "," << getTime() << "," << rob.first <<std::endl;
-                // }
+                for (auto &rob: robots){
+                    csvFile << rob.second -> getX() << "," << rob.second -> getY() << "," << getTime() << "," << rob.first <<std::endl;
+                }
                 // csvFile << "-------" << std::endl;
                 mtx.unlock();
                 std::this_thread::sleep_for(std::chrono::seconds(1));
