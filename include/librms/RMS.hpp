@@ -214,5 +214,13 @@ class RobotManagementSystem {
                 info.second -> print();
             }
         }
+        
+        int getNumRobots(){
+            return robots.size();
+        }
+
+        int getNumRooms(){
+            return roomDictionary.size();
+        }
 
 };
