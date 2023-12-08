@@ -3,6 +3,7 @@
 #include <random>
 #include <thread>
 #include <chrono>
+#include <fstream>
 //#include "RMS.hpp"
 #include <memory>
 #include "../include/librms/RMS.hpp"
@@ -72,6 +73,12 @@ int main() {
     int numLargeRoom = config["rooms"]["large"].size();
     int numMedRoom = config["rooms"]["medium"].size();
     int numSmallRoom = config["rooms"]["small"].size();
+
+    // write number of each rooms to a csv file to be input for the simulation
+    std::ofstream csvFile("../../output/room_count.csv");
+    csvFile << "large, medium, small" << std::endl;
+    csvFile << numLargeRoom << ", " << numMedRoom << ", " << numSmallRoom << std::endl;
+
     
     // initialize rooms and add to map
     for (int i = 0; i < config["rooms"]["large"].size(); i++){
