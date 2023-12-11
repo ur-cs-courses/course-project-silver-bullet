@@ -223,4 +223,15 @@ class RobotManagementSystem {
             return roomDictionary.size();
         }
 
+        int getNumBusy(){
+            return busyRobot.size();
+        }
+
+        std::string getLocation(int idx){
+            return robots[idx] -> getLoc();
+        }
+
+        int getRobotTime(int idx){
+            return robots[idx] -> getTime();
+        }
 };
