@@ -17,6 +17,7 @@ int main() {
     auto createRobot = [](Size robotSize, Type robotType, int processingTime, std::string loc_value, int xx, int yy) {
         return std::make_unique<Robot>(robotSize, robotType, processingTime, loc_value, xx, yy);
     };
+    
     try{
         YAML::Node config = YAML::LoadFile("../../input/config.yaml");
 
@@ -97,17 +98,17 @@ int main() {
         }
     }
     catch(const YAML::BadFile& err){
-        std::cerr << err.msg << std::endl;
-        fmt::print("Please make sure config.yaml file exists and is set up correctly.");
+        std::cerr << "Error: " << err.msg << std::endl;
+        fmt::print("Please make sure config.yaml file exists in the input directory and is set up correctly.");
         return 1;
     }
     catch(const YAML::ParserException& err){
-        std::cerr << err.msg << std::endl;
-        fmt::print("Please make sure config.yaml file is set up correctly.");
+        std::cerr << "Error: " << err.msg << std::endl;
+        fmt::print("Please make sure config.yaml file is formatted correctly.");
         return 1;
     }
     catch(const YAML::TypedBadConversion<int>& err){
-        std::cerr << err.msg << std::endl;
+        std::cerr << "Error: " << err.msg << std::endl;
         fmt::print("Please make sure config.yaml file is set up correctly. You may have one or more empty or missing fields.");
         return 1;
     }
