@@ -44,7 +44,7 @@ TEST_CASE("Robot Management System Tests"){
     }
 
     // Test checkFinish method
-    SECTION("Check finish"){
+    SECTION("Check finished cleaning"){
         // set initial time to 0 - already finished
         rms.addRobot(0, createRobot(Size::Large, Type::Mop, 0, "hub"));
         REQUIRE(rms.checkFinish(0));
@@ -55,7 +55,7 @@ TEST_CASE("Robot Management System Tests"){
     }
 
     // Test send to location
-    SECTION("Send to location"){
+    SECTION("Send robot to location"){
         rms.addRobot(0, createRobot(Size::Large, Type::Mop, 0, "hub"));
         rms.sendtoLoc(0, "bathroom");
         REQUIRE(rms.getLocation(0) == "bathroom");
@@ -82,7 +82,6 @@ TEST_CASE("Robot Management System Tests"){
         REQUIRE(rms.getRobotTime(0) == 19);
     }
 
-
     //Test add busy robot
     SECTION("Adding a busy robot"){
         rms.addRobot(0, createRobot(Size::Large, Type::Mop, 0, "hub"));
@@ -94,5 +93,20 @@ TEST_CASE("Robot Management System Tests"){
         REQUIRE(rms.getNumBusy() == 2);
         REQUIRE(rms.getRobotTime(0) == 20);
         REQUIRE(rms.getRobotTime(1) == 15);
+    }
+
+     SECTION("Request Cleaning"){
+        rms.addRobot(0, createRobot(Size::Small, Type::Mop, 0, "hub"));
+        
+        REQUIRE(rms.requestCleaning(RoomSize::Medium, Type::Sweeper) == -1); // Mismatched robot types
+        REQUIRE(rms.requestCleaning(RoomSize::Large, Type::Mop) == -1); // Mismatched sizes
+
+        rms.addRobot(1, createRobot(Size::Large, Type::Vacuum, 20, "hub"));
+
+        REQUIRE(rms.requestCleaning(RoomSize::Large, Type::Vacuum) == -1); // Only valid robot is a busy robot
+
+        rms.addRobot(1, createRobot(Size::Large, Type::Sweeper, 0, "hub"));
+        
+        REQUIRE(rms.requestCleaning(RoomSize::Medium, Type::Sweeper) == 1); // Valid cleaning request
     }
 }
