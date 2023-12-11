@@ -26,7 +26,7 @@ rooms:
     medium: ["room_name", ...]
     small: ["room_name", ...]
 ```
-Specify the number of robots of each type you have. Specify the names of the rooms in your buildings in their respective lists based on their size.
+Specify the number of robots of each type you have. Specify the names of the rooms in your buildings in their respective lists based on their size. If you have none of a certain type of robot, please enter `0` for that field. If you have no rooms of a certain size, you can leave an empty list as `[]`.
 The file is already populated with example values for your reference.
 
 ## Running the Program
