@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <string>
 #include <mutex>
+#include <random>
+#include <thread>
 
 class RobotManagementSystem {
     private:
@@ -352,5 +354,24 @@ class RobotManagementSystem {
                 info.second -> print();
             }
         }
+        
+        int getNumRobots(){
+            return robots.size();
+        }
 
+        int getNumRooms(){
+            return roomDictionary.size();
+        }
+
+        int getNumBusy(){
+            return busyRobot.size();
+        }
+
+        std::string getLocation(int idx){
+            return robots[idx] -> getLoc();
+        }
+
+        int getRobotTime(int idx){
+            return robots[idx] -> getTime();
+        }
 };
