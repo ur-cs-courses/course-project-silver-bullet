@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <string>
 #include <mutex>
+#include <random>
+#include <thread>
 
 class RobotManagementSystem {
     private:
