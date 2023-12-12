@@ -281,7 +281,7 @@ class RobotManagementSystem {
                 std::unique_lock<std::mutex> lock(mtx);
                 for (auto rob : busyRobot){
                     if (rob.second == true){
-                        if (withProbability(0.05)){
+                        if (withProbability(0.01)){
                             // Broken Event
                             busyRobot[rob.first] = false;
                             brokenRobot[rob.first] = true;
