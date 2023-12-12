@@ -17,99 +17,102 @@ int main() {
     auto createRobot = [](Size robotSize, Type robotType, int processingTime, std::string loc_value, int xx, int yy) {
         return std::make_unique<Robot>(robotSize, robotType, processingTime, loc_value, xx, yy);
     };
-
-    YAML::Node config = YAML::LoadFile("../../input/config.yaml");
-
-    int robotID = 0; // key value for adding robots to the map in RMS
-    int large = 0;
-    int small = 0;
-    int sweepers = 0;
-    int mops = 0;
-    int vacuums = 0;
     
-    for (int i = 0; i < config["robots"]["large_sweepers"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Large, Type::Sweeper, 0, "hub", 0, 0));
-        robotID++;
-        large++;
-        sweepers++;
+    try{
+        YAML::Node config = YAML::LoadFile("../../input/config.yaml");
+
+        int robotID = 0; // key value for adding robots to the map in RMS
+        int large = 0;
+        int small = 0;
+        int sweepers = 0;
+        int mops = 0;
+        int vacuums = 0;
+        
+        for (int i = 0; i < config["robots"]["large_sweepers"].as<int>(); i++){
+            rms.addRobot(robotID, createRobot(Size::Large, Type::Sweeper, 0, "hub", 0, 0));
+            robotID++;
+            large++;
+            sweepers++;
+        }
+
+        for (int i = 0; i < config["robots"]["small_sweepers"].as<int>(); i++){
+            rms.addRobot(robotID, createRobot(Size::Small, Type::Sweeper, 0, "hub", 0, 0));
+            robotID++;
+            small++;
+            sweepers++;
+        }
+
+        for (int i = 0; i < config["robots"]["large_vacuums"].as<int>(); i++){
+            rms.addRobot(robotID, createRobot(Size::Large, Type::Vacuum, 0, "hub", 0, 0));
+            robotID++;
+            large++;
+            vacuums++;
+        }
+
+        for (int i = 0; i < config["robots"]["small_vacuums"].as<int>(); i++){
+            rms.addRobot(robotID, createRobot(Size::Small, Type::Vacuum, 0, "hub", 0, 0));
+            robotID++;
+            small++;
+            vacuums++;
+        }
+
+        for (int i = 0; i < config["robots"]["large_mops"].as<int>(); i++){
+            rms.addRobot(robotID, createRobot(Size::Large, Type::Mop, 0, "hub", 0, 0));
+            robotID++;
+            large++;
+            mops++;
+        }
+
+        for (int i = 0; i < config["robots"]["small_mops"].as<int>(); i++){
+            rms.addRobot(robotID, createRobot(Size::Small, Type::Mop, 0, "hub", 0, 0));
+            robotID++;
+            small++;
+            mops++;
+        }
+
+    // number of each type of room
+        int numLargeRoom = config["rooms"]["large"].size();
+        int numMedRoom = config["rooms"]["medium"].size();
+        int numSmallRoom = config["rooms"]["small"].size();
+
+        // write number of each rooms to a csv file to be input for the simulation
+        std::ofstream csvFile("../../output/room_count.csv");
+        csvFile << "large, medium, small" << std::endl;
+        csvFile << numLargeRoom << ", " << numMedRoom << ", " << numSmallRoom << std::endl;
+
+        
+        // initialize rooms and add to map
+        for (int i = 0; i < config["rooms"]["large"].size(); i++){
+            std::string name = config["rooms"]["large"][i].as<std::string>();
+            rms.addRoom(name, RoomSize::Large);
+        }
+
+        for (int i = 0; i < config["rooms"]["medium"].size(); i++){
+            std::string name = config["rooms"]["medium"][i].as<std::string>();
+            rms.addRoom(name, RoomSize::Medium);
+        }
+
+        for (int i = 0; i < config["rooms"]["small"].size(); i++){
+            std::string name = config["rooms"]["small"][i].as<std::string>();
+            rms.addRoom(name, RoomSize::Small);
+        }
+    }
+    catch(const YAML::BadFile& err){
+        std::cerr << "Error: " << err.msg << std::endl;
+        fmt::print("Please make sure config.yaml file exists in the input directory and is set up correctly.");
+        return 1;
+    }
+    catch(const YAML::ParserException& err){
+        std::cerr << "Error: " << err.msg << std::endl;
+        fmt::print("Please make sure config.yaml file is formatted correctly.");
+        return 1;
+    }
+    catch(const YAML::TypedBadConversion<int>& err){
+        std::cerr << "Error: " << err.msg << std::endl;
+        fmt::print("Please make sure config.yaml file is set up correctly. You may have one or more empty or missing fields.");
+        return 1;
     }
 
-    for (int i = 0; i < config["robots"]["small_sweepers"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Small, Type::Sweeper, 0, "hub", 0, 0));
-        robotID++;
-        small++;
-        sweepers++;
-    }
-
-    for (int i = 0; i < config["robots"]["large_vacuums"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Large, Type::Vacuum, 0, "hub", 0, 0));
-        robotID++;
-        large++;
-        vacuums++;
-    }
-
-    for (int i = 0; i < config["robots"]["small_vacuums"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Small, Type::Vacuum, 0, "hub", 0, 0));
-        robotID++;
-        small++;
-        vacuums++;
-    }
-
-    for (int i = 0; i < config["robots"]["large_mops"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Large, Type::Mop, 0, "hub", 0, 0));
-        robotID++;
-        large++;
-        mops++;
-    }
-
-    for (int i = 0; i < config["robots"]["small_mops"].as<int>(); i++){
-        rms.addRobot(robotID, createRobot(Size::Small, Type::Mop, 0, "hub", 0, 0));
-        robotID++;
-        small++;
-        mops++;
-    }
-
-   // number of each type of room
-    int numLargeRoom = config["rooms"]["large"].size();
-    int numMedRoom = config["rooms"]["medium"].size();
-    int numSmallRoom = config["rooms"]["small"].size();
-
-    // write number of each rooms to a csv file to be input for the simulation
-    std::ofstream csvFile("../../output/room_count.csv");
-    csvFile << "large, medium, small" << std::endl;
-    csvFile << numLargeRoom << ", " << numMedRoom << ", " << numSmallRoom << std::endl;
-
-    
-    // initialize rooms and add to map
-    for (int i = 0; i < config["rooms"]["large"].size(); i++){
-        std::string name = config["rooms"]["large"][i].as<std::string>();
-        rms.addRoom(name, RoomSize::Large);
-    }
-
-    for (int i = 0; i < config["rooms"]["medium"].size(); i++){
-        std::string name = config["rooms"]["medium"][i].as<std::string>();
-        rms.addRoom(name, RoomSize::Medium);
-    }
-
-    for (int i = 0; i < config["rooms"]["small"].size(); i++){
-        std::string name = config["rooms"]["small"][i].as<std::string>();
-        rms.addRoom(name, RoomSize::Small);
-    }
-
-
-    //-------------------------------------------------------------------------------------------
-    // Example of adding robots (hard code)
-    // rms.addRobot(1, createRobot(Size::Small, Type::Mop, 0, "hub"));
-    // rms.addRobot(2, createRobot(Size::Large, Type::Mop, 0, "hub"));
-    // rms.addRobot(3, createRobot(Size::Small, Type::Vacuum, 0, "hub"));
-
-    // rms.addRoom("R1", RoomSize::Large);
-    // rms.addRoom("R2", RoomSize::Small);
-    // rms.addRoom("R3", RoomSize::Medium);
-
-    // rms.debug();
-
-    //-------------------------------------------------------------------------------------------
     bool flag = true;
     auto timer = std::chrono::high_resolution_clock::now();
     std::string command;
