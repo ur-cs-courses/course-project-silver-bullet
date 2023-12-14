@@ -26,11 +26,24 @@ interface Mapper {
 }
 
 class Room {
-    - size: room_size {small, median, large}
-    + room_name: string
+    - name: std::string
+    - size: RoomSize
     + getName(): std::string
-    + getSize(): std::string
+    + getSize(): RoomSize
 }
+
+enum RoomSize {
+  Small 
+  Medium
+  Large 
+}
+
+' class Room {
+'     - size: room_size {small, median, large}
+'     + room_name: string
+'     + getName(): std::string
+'     + getSize(): std::string
+' }
 
 ' class SmallRoom {
 '     +Size: 0
@@ -67,8 +80,6 @@ LargeRobot --> Sweeper
 LargeRobot --> Vacuum
 LargeRobot --> Mapper
 
-' Room <|-- SmallRoom
-' Room <|-- MedianRoom
-' Room <|-- LargeRoom
+Room --> RoomSize
 RobotManagementSystem *--* Robot : contains
 @enduml

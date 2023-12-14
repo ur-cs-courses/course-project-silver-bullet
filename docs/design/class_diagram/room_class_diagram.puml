@@ -1,8 +1,16 @@
 @startuml
-class Location {
-    - size: room_size {small, median, large}
-    + room_name: string
+class Room {
+    - name: std::string
+    - size: RoomSize
     + getName(): std::string
-    + getSize(): std::string
+    + getSize(): RoomSize
 }
+
+enum RoomSize {
+  Small 
+  Medium
+  Large 
+}
+
+Room --> RoomSize
 @enduml
