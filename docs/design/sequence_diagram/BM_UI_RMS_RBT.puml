@@ -4,6 +4,7 @@ actor "Building Manager" as BM
 participant "User Interface" as UI
 participant "Robot Management System" as RMS
 actor Robot
+participant "Visual Simulator" as VS
 
 BM -> UI: Request task
 
@@ -30,5 +31,11 @@ deactivate RMS
 end
 
 UI -> BM: Show Message to Manager
+
+BM -> VS: Data flow
+activate VS
+VS -> VS: Process data
+VS -> BM: Data flow back to Manager
+deactivate VS
 
 @enduml
