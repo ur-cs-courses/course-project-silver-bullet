@@ -10,6 +10,7 @@ BM -> PA: Request task
 PA -> RMS: Request task
 
 activate RMS
+RMS -> RMS: add request to que 
 RMS -> RMS: check robot availability
 
 alt robot available
