@@ -281,7 +281,7 @@ class RobotManagementSystem {
                 std::unique_lock<std::mutex> lock(mtx);
                 for (auto rob : busyRobot){
                     if (rob.second == true){
-                        if (withProbability(0.05)){
+                        if (withProbability(0.01)){
                             // Broken Event
                             busyRobot[rob.first] = false;
                             brokenRobot[rob.first] = true;
@@ -310,7 +310,7 @@ class RobotManagementSystem {
                                 // robots[rob.first] -> setX(init.first);
                                 // robots[rob.first] -> setY(init.second);
                                 std::pair<int, int> p = updateRobotLocation(init.first - 1, init.second, robots[rob.first] -> getX(), robots[rob.first] -> getY(), robots[rob.first] -> getTime(), get_step(getRoomSize(robots[rob.first] -> getLoc())));
-                                std::cout << p.first << " " << p.second << " " << robots[rob.first] -> getTime() << std::endl;
+                                // std::cout << p.first << " " << p.second << " " << robots[rob.first] -> getTime() << std::endl;
                                 robots[rob.first] -> setX(p.first);
                                 robots[rob.first] -> setY(p.second);
                                 outFile << "Robot" << rob.first << " is cleaning room " << robots[rob.first] -> getLoc() << " @ location (" << p.first << " " << p.second << ") at time " << getTime() << std::endl;
