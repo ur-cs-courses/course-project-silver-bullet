@@ -1,10 +1,12 @@
-# Silver Bullet's Cleaning Robot Management System
+# Silver Bullet's Cleaning Robot Fleet Management System
 
 This project was completed in Fall 2023 for CMSC322: Software Engineering Practicum.
 
 To get started, please navigate to our main documentation landing page [here.](docs/README.md)
 
 Authors: Jenna Donaldson, Thando Tsela, Tony Wang, Yili Yu
+
+![Digital drawing of a blue robot overlapped silver bullet with the text "Silver Bullet"](Silver_Bullet_logo.jpeg)
 
 # CMSC322 Main Project
 
